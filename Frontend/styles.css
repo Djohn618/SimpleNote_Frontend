@@ -1,0 +1,381 @@
+/* SimpleNote - styles.css */
+
+
+/* Basis-Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Seitenleiste */
+
+.sidebar {
+    width: 120px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.sidebar-logo {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.add-note-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.add-note-btn:hover {
+    background-color: #3a3a3a;
+}
+
+.plus-icon {
+    color: white;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+}
+
+
+/* Haupt-Inhaltsbereich */
+
+.main-content {
+    margin-left: 120px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+
+/* Kopfzeile mit Suchleiste */
+
+.top-header {
+    padding: 20px 44px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+    width: 280px;
+    font-family: inherit;
+}
+
+.search-input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* Notizen-Bereich */
+
+.notes-section {
+    padding: 36px 44px 60px;
+}
+
+.notes-heading {
+    font-size: 78px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 36px;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+
+/* Notizkarte */
+
+.note-card {
+    border-radius: 22px;
+    padding: 26px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-card:hover {
+    scale: 1.03;
+}
+
+.note-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.35;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.note-card-content {
+    font-size: 14px;
+    color: #2a2a2a;
+    line-height: 1.6;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.note-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.note-card-buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.note-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-btn:hover {
+    background-color: #444444;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999999;
+    font-size: 17px;
+    padding: 80px 0;
+    line-height: 1.6;
+}
+
+
+/* Modal Overlay */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.48);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+
+/* Modal-Fenster*/
+
+.modal {
+    background-color: #ffffff;
+    border-radius: 24px;
+    width: 92%;
+    max-width: 700px;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.modal-header {
+    padding: 28px 32px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.modal-title-input {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    background: transparent;
+}
+
+.modal-title-input::placeholder {
+    color: #cccccc;
+}
+
+.modal-body {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.modal-content-input {
+    width: 100%;
+    height: 100%;
+    padding: 26px 32px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333333;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+    overflow-y: auto;
+    min-height: 300px;
+}
+
+.modal-content-input::placeholder {
+    color: #bbbbbb;
+}
+
+
+/* Fusszeile */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 32px 26px;
+    border-top: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.btn-cancel {
+    padding: 12px 26px;
+    border-radius: 12px;
+    border: 1.5px solid #e0e0e0;
+    background-color: transparent;
+    color: #666666;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-cancel:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-save {
+    padding: 12px 30px;
+    border-radius: 12px;
+    border: none;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-save:hover {
+    background-color: #383838;
+}
+
+
+/* Responsive für kleine Bildschirmgrösse */
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 72px;
+    }
+
+    .main-content {
+        margin-left: 72px;
+    }
+
+    .sidebar-logo {
+        font-size: 9px;
+    }
+
+    .notes-heading {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .notes-section {
+        padding: 24px 20px 40px;
+    }
+
+    .top-header {
+        padding: 16px 20px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        width: 96%;
+        max-height: 92vh;
+    }
+}

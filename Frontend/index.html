@@ -8,22 +8,22 @@
 </head>
 <body>
 
-    <!-- ===== LINKE SEITENLEISTE ===== -->
+    <!-- Linke Seiteliste-->
     <aside class="sidebar">
 
         <!-- App-Name -->
         <div class="sidebar-logo">Simple<br>Note</div>
 
-        <!-- Plus-Button: Klick öffnet das Modal zum Erstellen einer neuen Notiz -->
+        <!-- Plus-Button:  öffnet das Modal zum Erstellen einer neuen Notiz -->
         <button class="add-note-btn" id="addNoteBtn" title="Neue Notiz erstellen">
             <span class="plus-icon">+</span>
         </button>
 
-        <!-- Farben-Anzeigen wurden entfernt -->
+    
 
     </aside>
 
-    <!-- ===== HAUPT-INHALTSBEREICH ===== -->
+    <!-- Haupt-Inhalt Bereich -->
     <main class="main-content">
 
         <!-- Kopfzeile mit Suchleiste -->
@@ -51,23 +51,19 @@
         <section class="notes-section">
             <h1 class="notes-heading">Notes</h1>
 
-            <!-- Hier werden die Notizkarten per JavaScript eingefügt -->
+            <!-- die Notizkarten werden per JavaScript eingefügt -->
             <div class="notes-grid" id="notesGrid">
             </div>
         </section>
 
     </main>
 
-    <!-- ===== MODAL: Notiz erstellen oder bearbeiten ===== -->
-    <!--
-        Das Modal ist standardmäßig unsichtbar (opacity: 0, visibility: hidden).
-        Mit der Klasse "active" wird es eingeblendet.
-    -->
+    <!-- Notiz erstellen oder bearbeiten -->
+
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal" id="noteModal">
 
-            <!-- Modal-Kopfzeile: nur noch das Titelfeld -->
-            <!-- Das Datumseingabefeld wurde entfernt -->
+            <!-- Modal-Kopfzeile: das Titelfeld -->
             <div class="modal-header">
                 <input
                     type="text"
@@ -77,8 +73,7 @@
                 >
             </div>
 
-            <!-- Modal-Hauptbereich: nur noch die Textarea -->
-            <!-- Das Format-Panel rechts wurde entfernt -->
+            <!-- Modal-Hauptbereich: die Textarea -->
             <div class="modal-body">
                 <textarea
                     id="modalContent"
@@ -87,7 +82,7 @@
                 ></textarea>
             </div>
 
-            <!-- Modal-Fußzeile: Abbrechen und Speichern -->
+            <!-- Modal-Fusszeile: Abbrechen und Speichern -->
             <div class="modal-footer">
                 <button class="btn-cancel" id="cancelBtn">Abbrechen</button>
                 <button class="btn-save" id="saveBtn">Speichern</button>
