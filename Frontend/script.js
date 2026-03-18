@@ -64,7 +64,7 @@ function renderNotes() {
     var grid = document.getElementById("notesGrid");
     var searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
 
-    // Grid leeren
+  
     grid.innerHTML = "";
 
     // Notizen nach Suchbegriff filtern
@@ -122,7 +122,7 @@ function createNoteCard(note, farbIndex) {
     inhaltEl.className = "note-card-content";
     inhaltEl.textContent = vorschau;
 
-    // Fußzeile mit Buttons
+    // Fusszeile mit Buttons
     var fusszeileEl = document.createElement("div");
     fusszeileEl.className = "note-card-footer";
 
