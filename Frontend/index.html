@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleNote</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== LINKE SEITENLEISTE ===== -->
+    <aside class="sidebar">
+
+        <!-- App-Name -->
+        <div class="sidebar-logo">Simple<br>Note</div>
+
+        <!-- Plus-Button: Klick öffnet das Modal zum Erstellen einer neuen Notiz -->
+        <button class="add-note-btn" id="addNoteBtn" title="Neue Notiz erstellen">
+            <span class="plus-icon">+</span>
+        </button>
+
+        <!-- Farben-Anzeigen wurden entfernt -->
+
+    </aside>
+
+    <!-- ===== HAUPT-INHALTSBEREICH ===== -->
+    <main class="main-content">
+
+        <!-- Kopfzeile mit Suchleiste -->
+        <header class="top-header">
+            <div class="search-container">
+                <!-- Lupen-Icon -->
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="#aaa" stroke-width="2.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <!-- Suchfeld -->
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search"
+                    autocomplete="off"
+                >
+            </div>
+        </header>
+
+        <!-- Notizen-Bereich -->
+        <section class="notes-section">
+            <h1 class="notes-heading">Notes</h1>
+
+            <!-- Hier werden die Notizkarten per JavaScript eingefügt -->
+            <div class="notes-grid" id="notesGrid">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL: Notiz erstellen oder bearbeiten ===== -->
+    <!--
+        Das Modal ist standardmäßig unsichtbar (opacity: 0, visibility: hidden).
+        Mit der Klasse "active" wird es eingeblendet.
+    -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="noteModal">
+
+            <!-- Modal-Kopfzeile: nur noch das Titelfeld -->
+            <!-- Das Datumseingabefeld wurde entfernt -->
+            <div class="modal-header">
+                <input
+                    type="text"
+                    id="modalTitle"
+                    class="modal-title-input"
+                    placeholder="Titel der Notiz"
+                >
+            </div>
+
+            <!-- Modal-Hauptbereich: nur noch die Textarea -->
+            <!-- Das Format-Panel rechts wurde entfernt -->
+            <div class="modal-body">
+                <textarea
+                    id="modalContent"
+                    class="modal-content-input"
+                    placeholder="Schreibe hier deinen Notizinhalt..."
+                ></textarea>
+            </div>
+
+            <!-- Modal-Fußzeile: Abbrechen und Speichern -->
+            <div class="modal-footer">
+                <button class="btn-cancel" id="cancelBtn">Abbrechen</button>
+                <button class="btn-save" id="saveBtn">Speichern</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript am Ende einbinden -->
+    <script src="script.js"></script>
+
+</body>
+</html>
